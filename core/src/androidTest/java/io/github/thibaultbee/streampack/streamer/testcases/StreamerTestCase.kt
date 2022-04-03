@@ -104,19 +104,6 @@ abstract class StreamerTestCase {
 
     // Multiple methods calls
     @Test
-    fun configureStartStreamTest() {
-        try {
-            streamer.configure(
-                AndroidUtils.fakeValidAudioConfig(),
-                AndroidUtils.fakeValidVideoConfig()
-            )
-            streamer.startStream()
-            fail("startStream without startPreview must failed")
-        } catch (e: Exception) {
-        }
-    }
-
-    @Test
     fun configureReleaseTest() {
         try {
             streamer.configure(
