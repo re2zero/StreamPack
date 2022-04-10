@@ -104,6 +104,7 @@ class CameraCapture(
     override fun startStream() {
         checkStream()
 
+        cameraController.muteVibrationAndSound()
         cameraController.addTarget(encoderSurface!!)
         isStreaming = true
     }
@@ -111,6 +112,8 @@ class CameraCapture(
     override fun stopStream() {
         if (isStreaming) {
             checkStream()
+
+            cameraController.unmuteVibrationAndSound()
 
             if (previewSurface != null) {
                 cameraController.removeTarget(encoderSurface!!)
